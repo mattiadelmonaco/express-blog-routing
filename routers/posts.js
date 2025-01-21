@@ -10,8 +10,18 @@ router.get("/", (req, res) => {
 
 // Show
 router.get("/:id", (req, res) => {
+
+    if (isNaN(req.params.id)) {
+        return res.sendStatus(400)
+    }
+
     const post = posts.find((elm) => elm.id == req.params.id)
-        res.json(post)
+
+        if (post) {
+            res.json(post)
+        } else {
+            res.sendStatus(404)
+        }
 })
 
 // Create
@@ -21,17 +31,50 @@ router.post("/", (req, res) => {
 
 // Update
 router.put("/:id", (req, res) => {
-    res.send(`Modifico interamente il post con id ${req.params.id}`)
+
+    if (isNaN(req.params.id)) {
+        return res.sendStatus(400)
+    }
+
+    const post = posts.find((elm) => elm.id == req.params.id)
+
+    if (post) {
+        res.send(`Modifico interamente il post con id ${req.params.id}`)
+    } else {
+        res.sendStatus(404)
+    }
 })
 
 // Modify
 router.patch("/:id", (req, res) => {
-    res.send(`Modifico parzialmente il post con id ${req.params.id}`)
+
+    if (isNaN(req.params.id)) {
+        return res.sendStatus(400)
+    }
+
+    const post = posts.find((elm) => elm.id == req.params.id)
+
+    if (post) {
+        res.send(`Modifico parzialmente il post con id ${req.params.id}`)
+    } else {
+        res.sendStatus(404)
+    }
 })
 
 // Delete
 router.delete("/:id", (req, res) => {
-    res.send(`Elimino il post con id ${req.params.id}`)
+
+    if (isNaN(req.params.id)) {
+        return res.sendStatus(400)
+    }
+
+    const post = posts.find((elm) => elm.id == req.params.id)
+
+    if (post) {
+        res.send(`Elimino il post con id ${req.params.id}`)
+    } else {
+        res.sendStatus(404)
+    }
 })
 
 module.exports = router
