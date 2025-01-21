@@ -36,4 +36,5 @@ const posts = [
     }
 ]
 
+// exports
 module.exports = posts

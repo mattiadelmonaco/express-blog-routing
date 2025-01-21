@@ -1,5 +1,7 @@
+// imports
 const posts = require("../Data/posts")
 
+// import express and create router's variable
 const express = require("express")
 const router = express.Router()
 
@@ -77,4 +79,5 @@ router.delete("/:id", (req, res) => {
     }
 })
 
+// exports
 module.exports = router
