@@ -1,0 +1,23 @@
+{
+  "name": "express-blog-routing",
+  "version": "1.0.0",
+  "description": "Blog routing exercise",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattiadelmonaco/express-blog-routing.git"
+  },
+  "author": "Mattia Del Monaco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattiadelmonaco/express-blog-routing/issues"
+  },
+  "homepage": "https://github.com/mattiadelmonaco/express-blog-routing#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
